@@ -1,4 +1,4 @@
-package lab1;
+package lab2;
 /**
  * двумерный класс точки.
  **/

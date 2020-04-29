@@ -1,4 +1,4 @@
-package lab3;
+package lab4;
 
 import javax.swing.JComponent;
 import java.awt.*;

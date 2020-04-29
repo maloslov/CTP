@@ -1,4 +1,4 @@
-package lab0;
+package lab1;
 
 public class Lab0 {
     //Part 1 - Primes
