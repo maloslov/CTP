@@ -44,8 +44,6 @@ public class Point2d {
     }
 
     public boolean equalsTo(Point2d p){
-        if (xCoord == p.x())
-            return yCoord == p.y();
-        return false;
+        return (xCoord == p.x() && yCoord == p.y());
     }
 }

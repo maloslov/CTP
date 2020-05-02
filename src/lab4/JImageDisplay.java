@@ -16,14 +16,14 @@ public class JImageDisplay extends JComponent {
     }
 
     @Override
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {//Need Testing
         super.paintComponent(g);
-        //g.drawImage(image, 0, 0, image.getWidth, image.getHeight, null);
+        g.drawImage(bufIm, 0, 0, bufIm.getWidth(), bufIm.getHeight(), null);
     }
-    public void clearImage(){
-
+    public void clearImage(){ //Need Testing
+        bufIm.setRGB(0,0,bufIm.getWidth(), bufIm.getHeight(), null,0,0);
     }
     public void drawPixel(int x, int y, int rgbColor){
-
+        bufIm.setRGB(x, y, rgbColor);
     }
 }

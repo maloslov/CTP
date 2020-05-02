@@ -2,7 +2,8 @@ package lab2;
 
 import java.util.Scanner;
 
-public class Main {
+public class
+Main {
     // вычисление площади треугольника
     public static double computeArea(Point3d p1, Point3d p2, Point3d p3){
         double a = p1.distanceTo(p2);

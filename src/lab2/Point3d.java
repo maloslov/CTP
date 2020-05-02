@@ -42,9 +42,6 @@ public class Point3d extends Point2d {
 
     /** сравнение двух трехмерных точек **/
     public boolean equalsTo(Point3d p){
-        if (xCoord == p.x())
-            if (yCoord == p.y())
-                return zCoord == p.z();
-        return false;
+        return (xCoord == p.x() && yCoord == p.y() && zCoord == p.z());
     }
 }
