@@ -5,7 +5,7 @@ import com.sun.xml.internal.bind.v2.TODO;
 import java.awt.geom.Rectangle2D;
 
 public class Mandelbrot extends FractalGenerator {
-
+    public static final int MAX_ITERATIONS = 2000;
     @Override
     public void getInitialRange(Rectangle2D.Double range) {
         range.x = -2;
@@ -15,11 +15,23 @@ public class Mandelbrot extends FractalGenerator {
     }
 
     @Override
-    public int numIterations(double x, double y) {//I dunno how to realize the method
-        /** TODO: Implement. */
+    public int numIterations(double x, double y) {
+        int i = 0;
+        double zRe = 0,
+                zIm = 0;
 
-        if((x*x+y*y)>4)
-            return 1;
-        return 0;
+        //Считает итерации по комплексным числам
+        while(i < MAX_ITERATIONS && (zRe*zRe + zIm*zIm) < 4){
+            double zReNew = zRe*zRe - zIm*zIm + x,
+                zImNew = zRe*zIm*2 + y;
+            zRe = zReNew;
+            zIm = zImNew;
+            i++;
+        }
+        //Возврат при превышении порога итераций
+        if(i == MAX_ITERATIONS)
+            return -1;
+
+        return i;
     }
 }
