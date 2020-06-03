@@ -277,4 +277,18 @@ public class Task6 {
         }
         return res;
     }
+    //test
+    public static void main(String[] args){
+        System.out.println("01-> " + bell(3)); //5
+        System.out.println("02.1-> " + translateWord("button")); //uttonbay
+        System.out.println("02.2-> " + translateSentence("I like to eat honey waffles?")); //Iyay ikelay otay eatyay oneyay afflesway?
+        System.out.println("03-> " + validColor("rgb(12,13,14)")); //true
+        System.out.println("04-> " + stripUrlParams("http://mtuci.ru?a=1&b=2&a=3","b")); //
+        System.out.println("05-> " + getHashTags("How the Avocado Became the Fruit of the Global Trade")); //[#avocado,#became,#global]
+        System.out.println("06-> " + ulam(9)); //16
+        System.out.println("07-> " + longestNonrepeatingSubstring("aabcabcbb")); //abc
+        System.out.println("08-> " + convertToRoman(12)); //XII
+        System.out.println("09-> " + formula("6 * 4 = 24")); //true
+        System.out.println("10-> " + palindromeDescendant(123321)); //true
+    }
 }

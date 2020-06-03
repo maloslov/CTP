@@ -1,11 +1,14 @@
 package Tasks;
 
+import java.util.Arrays;
+
 public class Task2 {
     // Part 1
     public static String repeat(String str, int n){
         String res = "";
         for (int i = 0; i < str.length(); i++) {
-            res += str.charAt(i) *n;
+            for(int j = 0; j < n; j++)
+                res += str.charAt(i);
         }
         return res;
     }
@@ -42,9 +45,10 @@ public class Task2 {
     }
     // Part 5
     public static int getDecimalPlaces(String str){
+        int res = 0;
         if(str.contains("."))
-            return str.length()-str.indexOf(".");
-        return 0;
+            res = str.length()-str.indexOf(".")-1;
+        return res;
     }
     // Part 6
     public static int fibonacci(int n){
@@ -102,5 +106,19 @@ public class Task2 {
             else counter++;
         }
         return counter;
+    }
+    //test
+    public static void main(String[] args){
+        System.out.println("01-> " + repeat("mice",5)); //mmmmmiiiiiccccceeee
+        System.out.println("02-> " + differenceMaxMin(new int[]{44,32,86,19})); //67
+        System.out.println("03-> " + isAvgWhole(new int[]{1,5,6})); //true
+        System.out.println("04-> " + Arrays.toString(cumulativeSum(new int[]{1, 2, 3}))); //[1,3,6]
+        System.out.println("05-> " + getDecimalPlaces("43.20")); //2
+        System.out.println("06-> " + fibonacci(7)); //21
+        System.out.println("07-> " + isValid("59001")); //true
+        System.out.println("08-> " + isStrangePair("bush","hubris")); //false
+        System.out.println("09.1-> " + isPrefix("automation","auto-")); //true
+        System.out.println("09.2-> " + isSuffix("arachnophobia","-phobia")); //true
+        System.out.println("10-> " + boxSeq(1)); //3
     }
 }

@@ -6,7 +6,7 @@ public class Task1 {
         return a % b;
     }
     // Part 2 - triangle's square
-    public static double sriArea(double length, double height){
+    public static double triArea(double length, double height){
         return height * length / 2;
     }
     // Part 3 - how many legs do animals have
@@ -52,7 +52,7 @@ public class Task1 {
     public static int sumOfCubes(int[] mas){
         int res = 0;
         for (int i = 0; i < mas.length; i++)
-            res+=mas[i];
+            res += mas[i] * mas[i];
 
         return res;
     }
@@ -65,5 +65,18 @@ public class Task1 {
         if (res % c == 0)
             return true;
         return false;
+    }
+    //test
+    public static void main(String[] args){
+        System.out.println("01-> " + remainder(3,4)); //3
+        System.out.println("02-> " + triArea(7,4)); //14.0
+        System.out.println("03-> " + animalLegs(2,3,5)); //36
+        System.out.println("04-> " + profitableGamble(0.2,50,9)); //true
+        System.out.println("05-> " + operation(24,15,9)); //added
+        System.out.println("06-> " + ctoa('A')); //65
+        System.out.println("07-> " + addUpTo(10)); //55
+        System.out.println("08-> " + nextEdge(8,10)); //17
+        System.out.println("09-> " + sumOfCubes(new int[]{3,4,5})); //50
+        System.out.println("10-> " + abcmath(5,2,1)); //true
     }
 }

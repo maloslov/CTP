@@ -57,16 +57,16 @@ public class Task3 {
     }
     // Part 5
     public static boolean isValidHexCode(String str){
-        String abc = "0123456789ABCDEFabcdef";
-        boolean flag = true;
-        if(str.length() == 6){
-            if (str.charAt(0) == '#')
+        String abc = "abcdefABCDEF";
+        boolean flag = false;
+        int count = 1;
+        if(str.length() == 7 && str.charAt(0) == '#') {
                 for (int i = 1; i < str.length(); i++) {
-                if(abc.indexOf(str.charAt(i)) == -1)
-                    flag = false;
+                if(abc.indexOf(str.charAt(i)) != -1 || Character.isDigit(str.charAt(i)))
+                    count++;
                 }
-        } else flag = false;
-        return flag;
+        } else count = -1;
+        return (count == str.length());
     }
     // Part 6
     public static boolean same(int[] arr1, int[] arr2){
@@ -98,12 +98,17 @@ public class Task3 {
     }
     // Part 8
     public static String longestZero(String str){
-        String res = "";
+        String res = "",
+                buf = "";
         if(str.indexOf('0') != -1 && str.length()>0){
             for (int i = 0; i < str.length()-1; i++) {
                 if (str.charAt(i) == '0')
-                    res += '0';
-                else res = "";
+                    buf += "0";
+                else {
+                    if(buf.length() > res.length())
+                        res = buf;
+                    buf = "";
+                }
             }
         }
         return res;
@@ -132,5 +137,18 @@ public class Task3 {
         if(a*a+b*b==c*c || a*a+c*c==b*b || b*b+c*c==a*a)
             flag = true;
         return flag;
+    }
+    //test
+    public static void main(String[] args){
+        System.out.println("01-> " + solution(1,0,-1)); //2
+        System.out.println("02-> " + findZip("all zip files are zipped")); //18
+        System.out.println("03-> " + checkPerfect(28)); //true
+        System.out.println("04-> " + flipEndChars("Ada")); //adA
+        System.out.println("05-> " + isValidHexCode("#5D5C5C")); //true
+        System.out.println("06-> " + same(new int[]{1,3,4,4,4},new int[]{2,5,7})); //true
+        System.out.println("07-> " + isKaprekar(5)); //false
+        System.out.println("08-> " + longestZero("100100100")); //00
+        System.out.println("09-> " + nextPrime(12)); //13
+        System.out.println("10-> " + isRightTriangle(3,4,5)); //true
     }
 }
