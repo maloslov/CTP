@@ -5,10 +5,10 @@ import java.net.*;
 public class URLDepthPair {
     private String currentURL;
     private int currentDepth;
-    
+
     public URLDepthPair(String URL, int depth) {
-        currentDepth = depth;
         currentURL = URL;
+        currentDepth = depth;
     }
     public String getURL() {
         return currentURL;
@@ -26,7 +26,7 @@ public class URLDepthPair {
             return url.getPath();
         }
         catch (MalformedURLException e) {
-        //    System.err.println("MalformedURLException01: " + e.getMessage());
+        //    System.err.println("MalformedURLException1: " + e.getMessage());
             return null;
         }
     }
@@ -36,8 +36,10 @@ public class URLDepthPair {
             return url.getHost();
         }
         catch (MalformedURLException e) {
-        //    System.err.println("MalformedURLException00: " + e.getMessage());
+        //    System.err.println("MalformedURLException2: " + e.getMessage());
             return null;
         }
     }
+    
+    
 }
