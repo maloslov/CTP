@@ -18,6 +18,7 @@ public class Crawler {
         while (pending.size() > 0) {
             process(pending.removeFirst());
         }
+        System.out.println("Number of links: " + processed.size());
     }
 
     private void process(URLDepthPair pair) throws IOException {
@@ -57,17 +58,6 @@ public class Crawler {
         }
         reader.close();
     }
-
-    /*
-    public String getAllLinks() {
-        String res = "";
-        for (URLDepthPair elem : processed){
-            res += elem.toString() + "\r\n";
-        }
-        res += "Number of links: " + processed.size();
-        return res;
-    }
-    */
 }
 
 
