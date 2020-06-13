@@ -1,6 +1,7 @@
 package lab7;
 
 import java.net.*;
+import java.util.Objects;
 
 public class URLDepthPair {
     private String currentURL;
@@ -20,26 +21,19 @@ public class URLDepthPair {
         String stringDepth = Integer.toString(currentDepth);
         return stringDepth + '\t' + currentURL;
     }
-    public String getDocPath() {
-        try {
-            URL url = new URL(currentURL);
-            return url.getPath();
+
+    @Override
+    public boolean equals(Object o) {
+        boolean res = false;
+        if (o instanceof URLDepthPair){
+            URLDepthPair obj = (URLDepthPair) o;
+            res = currentURL.equals(obj.getURL());
         }
-        catch (MalformedURLException e) {
-        //    System.err.println("MalformedURLException1: " + e.getMessage());
-            return null;
-        }
+        return res;
     }
-    public String getWebHost() {
-        try {
-            URL url = new URL(currentURL);
-            return url.getHost();
-        }
-        catch (MalformedURLException e) {
-        //    System.err.println("MalformedURLException2: " + e.getMessage());
-            return null;
-        }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(currentURL, currentDepth);
     }
-    
-    
 }
