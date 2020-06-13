@@ -24,6 +24,7 @@ public class URLPool {
             }
             wait();
         }
+
         URLDepthPair pair = pending.removeFirst();
         if(/* pending.size() > 0 && */ pair.getDepth() > 3) {
             System.out.println("Number of links: " + processed.size());

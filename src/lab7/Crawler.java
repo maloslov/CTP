@@ -33,6 +33,7 @@ public class Crawler {
         if (redirect != null) {
             urlConnection = new URL(redirect).openConnection();
         }
+
         processed.add(pair);
         System.out.println(pair.toString());
 

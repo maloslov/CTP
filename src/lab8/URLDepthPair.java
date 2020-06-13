@@ -10,12 +10,15 @@ public class URLDepthPair {
         currentURL = URL;
         currentDepth = depth;
     }
+
     public String getURL() {
         return currentURL;
     }
+
     public int getDepth() {
         return currentDepth;
     }
+
     public String toString() {
         String stringDepth = Integer.toString(currentDepth);
         return stringDepth + '\t' + currentURL;

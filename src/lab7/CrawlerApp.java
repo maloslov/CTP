@@ -7,7 +7,8 @@ public class CrawlerApp {
         if(args.length == 2){
             Crawler crawler = new Crawler(args[0], Integer.parseInt(args[1]));
             crawler.start();
-        } else
+        }
+        else
             System.out.println("Wrong args! usage: <start URL> <depth>");
     }
 }

@@ -14,7 +14,8 @@ public class CrawlerApp {
                 new Thread(search).start();
                 System.out.println("Task " + i +" is running.");
             }
-        } else
+        }
+        else
             System.out.println("Wrong args! usage: <start URL> <depth> <threads>");
     }
 }

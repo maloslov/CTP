@@ -36,6 +36,7 @@ public class CrawlerTask implements Runnable {
                 input = input.substring(input.indexOf(URL_START + PREFIX) + 8);
                 link = input.substring(0, input.indexOf('\"'));
                 //
+
                 if(link.contains(" ")) {
                     link = link.replace(" ", "%20");
                 }
