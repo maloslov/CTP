@@ -15,7 +15,7 @@ public class Crawler {
     }
 
     public void start() throws IOException {
-        while (pending.size() > 0) {
+        while (pending.size() < maxDepth) {
             process(pending.removeFirst());
         }
         System.out.println("Number of links: " + processed.size());
