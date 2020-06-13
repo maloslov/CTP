@@ -15,7 +15,7 @@ public class Crawler {
     }
 
     public void start() throws IOException {
-        while (pending.size() > 0) {
+        while (pending.size() < maxDepth) {
             process(pending.removeFirst());
         }
     }
@@ -57,17 +57,6 @@ public class Crawler {
         }
         reader.close();
     }
-
-    /*
-    public String getAllLinks() {
-        String res = "";
-        for (URLDepthPair elem : processed){
-            res += elem.toString() + "\r\n";
-        }
-        res += "Number of links: " + processed.size();
-        return res;
-    }
-    */
 }
 
 
